@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="main">
+
+    <div id="menubar_container">
+        <div id="menubar">
+
+
+
+            <div id="menu_items">
+                <ul id="menu">
+                    <li><a href="index">Home</a></li>
+                    <li class="current"><a href="contact">Contact Us</a></li>
+                    <li><a href="login">Log-in</a></li>
+                    <li><a href="signup">Sign-Up</a></li>
+                </ul>
+            </div><!--close menu-->
+
+        </div><!--close menubar-->
+    </div><!--close menubar_container-->
+
+    <div id="slogan_container">
+        <div id="slogan">
+            <h2>Do you think you are intelligent??? Lets See !!!</h2>
+        </div><!--close slogan-->
+    </div><!--close slogan_container-->
+
+    <div id="site_content">
+
+        <div class="sidebar_container">
+
+            <div class="sidebar">
+                <div class="sidebar_item">
+                    <h2>My Website</h2>
+                    <p>Welcome to my new website. Please have a look around, any feedback is much appreciated.</p>
+                </div><!--close sidebar_item-->
+            </div><!--close sidebar-->
+
+            <div class="sidebar">
+                <div class="sidebar_item">
+                    <h2>Latest Update</h2>
+                    <h3>June 2014</h3>
+                    <p>Views and Controllers are Updated.</p>
+                </div><!--close sidebar_item-->
+            </div><!--close sidebar-->
+
+        </div><!--close sidebar_container-->
+
+        <div id="content">
+            <div class="content_item">
+                <h1>Thank you for your Message..!!</h1>
+                <form class="form_settings" action="/Home/back" method="post">
+                    <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="contact_submitted" value="Go-Back" /></p>
+                </form>
+            </div>
+        </div>
+
+    </div><!--close site_content-->
+
+</div><!--close main-->

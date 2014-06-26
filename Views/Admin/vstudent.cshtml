@@ -1,0 +1,120 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/style")
+
+    @Scripts.Render("~/bundles/jquery")
+    <script>
+        $(document).ready(function () {
+            $.getJSON("/Admin/GetStId", function (data) {
+                $.each(data, function (i, item) {
+                    $("#stdTable").append("<tr><td>" + item.Username + "</td>" +
+                                            "<td>" + item.Password + "</td>" +
+                                            "<td>" + item.Name + "</td>" +
+                                            "<td>" + item.Address + "</td>" +
+                                            "<td>" + item.Result + "</td>"
+                                            
+                        );
+                });
+
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div id="welcome">
+        <h1><a href="#">Welcome To Quiz Mania</a></h1>
+    </div><br />
+
+
+    <div id="menubar_container">
+        <div id="menubar">
+
+            <div id="menu_items">
+                <ul id="menu">
+                    <li><a href="index">Home</a></li>
+                    <li><a href="quiz">Manage Quiz</a></li>
+                    <li class="current"><a href="student">Manage Student</a></li>
+                    <li><a href="/Home/index">Log-out</a></li>
+                </ul>
+            </div><!--close menu_Items-->
+
+        </div><!--close menubar-->
+    </div><!--close menubar_container-->
+
+    <div id="slogan_container">
+        <div id="slogan">
+            <h2>Do you think you are intelligent??? Lets See !!!</h2>
+        </div><!--close slogan-->
+    </div><!--close slogan_container-->
+
+    <div id="site_content">
+        <div class="sidebar_container">
+
+            <div class="sidebar">
+                <div class="sidebar_item">
+                    <a href="astudent">Add Student</a>
+                    <p>Click here to Register a new Student</p>
+                </div><!--close sidebar_item-->
+            </div><!--close sidebar-->
+
+            <div class="sidebar">
+                <div class="sidebar_item">
+                    <a href="dstudent">Delete Student</a>
+                    <p>Click here to delete a Student</p>
+                </div><!--close sidebar_item-->
+            </div><!--close sidebar-->
+
+            <div class="sidebar">
+                <div class="sidebar_item">
+                    <a href="ustudent">Update Student</a>
+                    <p>Click here to Update a Student</p>
+                </div><!--close sidebar_item-->
+            </div><!--close sidebar-->
+
+            <div class="sidebar">
+                <div class="sidebar_item">
+                    <a href="vstudent">View All Students</a>
+                    <p>Click here to view all Student</p>
+                </div><!--close sidebar_item-->
+            </div><!--close sidebar-->
+
+        </div><!--close sidebar_container-->
+
+        <div id="content">
+
+            <div class="content_item">
+                <div class="form_settings">
+                    <form>
+                        <h1>View All Students</h1>
+                        <table border="1" id="stdTable">
+                            <tr>
+                                <td>Username</td>
+                                <td>Password</td>
+                                <td>Name</td>
+                                <td>Address</td>
+                                <td>Result</td>
+                                
+                            </tr>
+
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div id="footer">
+        CopyRight Reserved | Website template by Syed Anees
+    </div>
+
+</body>
+</html>

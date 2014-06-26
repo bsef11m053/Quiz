@@ -1,0 +1,89 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+    <div id="menubar_container">	    
+	  <div id="menubar">
+		
+        <div id="menu_items">
+	      <ul id="menu">
+            <li><a href="index">Home</a></li>
+            <li class="current"><a href="quiz">Manage Quiz</a></li>
+              <li><a href="student">Manage Student</a></li>
+              <li><a href="/Home/index">Log-out</a></li>
+          </ul>
+        </div><!--close menu_Items-->		
+      
+	  </div><!--close menubar-->		  
+	</div><!--close menubar_container-->
+
+    <div id="slogan_container">     		  
+	  <div id="slogan">	  
+	    <h2>Do you think you are intelligent??? Lets See !!!</h2>	  
+	  </div><!--close slogan-->				
+	</div><!--close slogan_container-->	
+
+    <div id="site_content">		
+	  <div class="sidebar_container">       
+		
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <a href="aquiz" >Add Quiz</a>
+              <p>Click here to add a new Quiz</p>
+          </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->     		
+		
+          <div class="sidebar">
+          <div class="sidebar_item">
+            <a href="dquiz" >Delete Quiz</a>
+              <p>Click here to delete a Quiz</p>
+          </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->
+		
+          <div class="sidebar">
+          <div class="sidebar_item">
+            <a href="uquiz" >Update Quiz</a>
+              <p>Click here to update a Quiz</p>
+          </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->
+
+          <div class="sidebar">
+          <div class="sidebar_item">
+            <a href="vquiz" >View All Quiz</a>
+              <p>Click here to view all Quizes</p>
+          </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->
+
+      </div><!--close sidebar_container-->
+
+        <div id="content">
+        
+		    <div class="content_item">
+                <div class="form_settings">
+                    <h1>Add New Quiz</h1>
+                    <p>Select the text file to upload it.</p>
+                    <form action="/Admin/AddQuestion" method="post">
+                        
+                        <p><span>Question</span><textarea class="contact textarea" rows="8" cols="50" value="" name="question" ></textarea> </p>
+                        <p><span>Correct Option</span><input type="text" value="" name="coption"/></p>
+                        <p><span>Option B</span><input type="text" value="" name="optionb"/></p>
+                        <p><span>option C</span><input type="text" value="" name="optionc"/></p>
+                        <p><span>Option D</span><input type="text" value="" name="optiond"/></p>
+                        <p><span>Category</span><select name="cat_dropdown" >
+                            <option >Math</option>
+                            <option >History</option>
+                            <option >Science</option>
+                            <option >General Knowledge</option>
+                        </select></p>
+                        <p style="padding-top: 15px"><span>&nbsp;</span><h2>OR</h2></p>
+                        <p><span>Upload Quiz File :</span><input type="file" name="quizfile" /></p> 
+                        <br />
+                        <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="add_quiz" value="Add Quiz" /></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        </div>

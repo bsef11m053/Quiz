@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/style")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="welcome">
+	      <h1><a href="#">Welcome To Quiz Mania</a></h1>
+	    </div><br />
+    @RenderBody()
+   
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+    <br />
+    <div id="footer">
+	 CopyRight Reserved | Website template by Syed Anees
+  </div>
+
+</body>
+</html>

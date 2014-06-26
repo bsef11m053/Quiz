@@ -1,0 +1,69 @@
+﻿@model Quiz.Models.User
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+    <div id="menubar_container">	    
+	  <div id="menubar">
+		
+        <div id="menu_items">
+	      <ul id="menu">
+            <li><a href="index">Home</a></li>
+            <li ><a href="quiz">Take Quiz</a></li>
+              <li class="current"><a href="profile">Manage Profile</a></li>
+              <li><a href="/Home/index">Log-out</a></li>
+          </ul>
+        </div><!--close menu_Items-->		
+      
+	  </div><!--close menubar-->		  
+	</div><!--close menubar_container-->
+
+    <div id="slogan_container">     		  
+	  <div id="slogan">	  
+	    <h2>Do you think you are intelligent??? Lets See !!!</h2>	  
+	  </div><!--close slogan-->				
+	</div><!--close slogan_container-->	
+
+    <div id="site_content">		
+	  <div class="sidebar_container">       
+		
+        <div class="sidebar">
+            <div class="sidebar_item">
+                <br /><a href="cpassword">Change Password</a><br />
+                <p>You can change your current password</p>
+            </div><!--close sidebar_item-->
+        </div><!--close sidebar-->
+
+        <div class="sidebar">
+            <div class="sidebar_item">
+                <a href="uprofile">Update Profile</a><br />
+                <p>You can update your personal Information</p>
+            </div><!--close sidebar_item-->
+        </div><!--close sidebar-->
+        <div class="sidebar">
+            <div class="sidebar_item">
+                <a href="vprofile">View Profile</a><br />
+                <p>You can View your profile</p>
+            </div><!--close sidebar_item-->
+        </div><!--close sidebar-->
+
+          </div>
+
+        <div id="content">
+
+            <div class="content_item">
+                <h1><b>Update Profile</b></h1>
+                <form class="form_settings" action="/Student/UStudent" method="post">
+                    
+                    <p><span>Username</span> @Html.LabelFor(m => m.Username, null, new { @class = "contact" })</p>
+                    <p><span>Full Name</span> @Html.TextBoxFor(m => m.Name, null, new { @class = "contact" })</p>
+                    <p><span>Address</span> @Html.TextBoxFor(m => m.Address, null, new { @class = "contact" })</p>
+                    <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="contact_submitted" value="Update" /></p>
+                </form>
+            </div>
+        </div>
+        </div>
+

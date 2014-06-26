@@ -1,0 +1,72 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+
+    <div id="menubar_container">	    
+	  <div id="menubar">
+		
+        <div id="menu_items">
+	      <ul id="menu">
+            <li class="current"><a href="index">Home</a></li>
+            <li><a href="quiz">Take Quiz</a></li>
+              <li><a href="profile">Update Profile</a></li>
+              <li><a href="/Home/index">Log-out</a></li>
+          </ul>
+        </div><!--close menu_Items-->		
+      
+	  </div><!--close menubar-->		  
+	</div><!--close menubar_container-->
+
+    <div id="header_container">     		  
+	  <div id="header"></div><!--close header-->				
+	</div><!--close header_container-->	
+	
+	<div id="slogan_container">     		  
+	  <div id="slogan">	  
+	    <h2>Do you think you are intelligent??? Lets See !!!</h2>	  
+	  </div><!--close slogan-->				
+	</div><!--close slogan_container-->	
+
+    <div id="site_content">		
+	  <div class="sidebar_container">       
+		
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h2>My Website</h2>
+            <p>Welcome to my new website. Please have a look around, any feedback is much appreciated.</p>
+          </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->     		
+		
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h2>Latest Update</h2>
+            <h3>June 2014</h3>
+            <p>Views and Controllers are Updated.</p>         
+		  </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->
+
+      </div><!--close sidebar_container-->
+         
+        <div id="content">
+        
+		<div class="content_item">
+		  
+		  <h1>Welcome <label>@Html.Raw(Session["Username"].ToString())!!</label></h1> 
+	      <p><pre> This is the Home page for Student. You can <br />
+          <b>1- Take Quiz</b><br />
+           1.1-  Take Quiz for selected category<br />
+           1.2-  View your result <br />
+          <b>2- Profile Management</b> <br />
+           2.1-  Change Password <br />
+           2.2-  View your Profile<br />
+           2.3-  Update your Profile<br />
+           </pre>
+	      </p>
+		</div><!--close content_item-->
+      
+	  </div><!--close content--> 
+
+        </div>
