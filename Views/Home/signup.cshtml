@@ -1,0 +1,122 @@
+﻿@model Quiz.Models.User
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+ <div id="main">
+	
+	<div id="menubar_container">	    
+	  <div id="menubar">
+	    
+        <div id="menu_items">
+	      <ul id="menu">
+            <li><a href="index">Home</a></li>
+            <li><a href="contact">Contact Us</a></li>
+            <li><a href="login">Log-in</a></li>
+            <li class="current"><a href="signup">Sign-Up</a></li>
+          </ul>
+        </div><!--close menu-->		
+      
+	  </div><!--close menubar-->		  
+	</div><!--close menubar_container-->
+	
+	<div id="slogan_container">     		  
+	  <div id="slogan">	  
+	    <h2>Do you think you are intelligent??? Lets See !!!</h2>	  
+	  </div><!--close slogan-->				
+	</div><!--close slogan_container-->			
+    
+	<div id="site_content">	
+
+	          <div class="sidebar_container">       
+		
+		        <div class="sidebar">
+                  <div class="sidebar_item">
+                    <h2>My Website</h2>
+                    <p>Welcome to my new website. Please have a look around, any feedback is much appreciated.</p>
+                  </div><!--close sidebar_item--> 
+                </div><!--close sidebar-->     		
+		
+		        <div class="sidebar">
+                  <div class="sidebar_item">
+                    <h2>Latest Update</h2>
+                    <h3>June 2014</h3>
+                    <p>Views and Controllers are Updated.</p>         
+		          </div><!--close sidebar_item--> 
+                </div><!--close sidebar-->
+		
+                </div><!--close sidebar_container-->  
+		
+ 
+	   
+              <div id="content">
+                <div class="content_item">
+		          @*<div class="form_settings">
+                    <h2>Sign Up</h2>
+                    <p>Please fill all the fields to Sign-up. All fields are neccessaroy</p>
+			        <p>&nbsp;</p>
+                  <p><span><label for="Username">Username</label></span>* <input class="contact" type="text" name="your_uname" value="" id="username" /><div id="result"></div></p>
+                      @Scripts.Render("~/Scripts/jquery-1.8.2.js")
+                      <script>
+                         
+                              $('#username').blur(function () {
+                                  var uname = $('#username').val();
+
+                                  $.getJSON("/Home/checkUsername?name=" + uname, function (data) {
+                                      if(data)
+                                      {
+                                          $('#result').text('Not Available');
+                                      }
+                                      else
+                                      {
+                                          $('#result').text('Available');
+                                      }
+                                  });
+                              });
+                          
+                      </script>
+			        <p><span><label for="Password">Password</label></span>* <input class="contact" type="text" name="your_password" value="" /></p>
+			        <p><span><label for="Name">Name</label></span>* <input class="contact" type="text" name="your_name" value="" /></p>
+                    <p><span><label for="Address">Address</label></span>* <input class="contact" type="text" name="your_rollNo" value="" /></p>
+                    <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="contact_submitted" value="Sign-Up" /></p>
+                  </div>*@
+                    @using(Html.BeginForm("save", "Student", FormMethod.Post, new {@class="form_settings" }))
+                    {
+                        <h2>Sign Up</h2>
+                        <p>Please fill all the fields to Sign-up. All fields are neccessaroy</p>
+                        <p>&nbsp;</p>
+                        <p><span> @Html.Label("Username") </span>* @Html.TextBoxFor( m => m.Username, null, new { @class = "contact" }) <div id="result" class="res"></div> </p>
+                         @Scripts.Render("~/Scripts/jquery-1.7.1.js")
+                      <script>
+                         
+                              $('#Username').blur(function () {
+                                  var uname = $('#Username').val();
+
+                                  $.getJSON("/Home/checkUsername?name=" + uname, function (data) {
+                                      if(data)
+                                      {
+                                          $('#result').text('Not Available');
+                                      }
+                                      else
+
+                                      {
+                                          $('#result').text('Available');
+                                      }
+                                  });
+                              });
+                          
+                      </script>
+                        @Html.Raw(Session["Username"].ToString());
+                        <p><span> @Html.Label("Password") </span>* @Html.TextBoxFor(m=>m.Password , null, new { @class = "contact" }) </p>
+                        <p><span> @Html.Label("Name") </span>* @Html.TextBoxFor(m=>m.Name , null, new { @class = "contact" }) </p>
+                        <p><span> @Html.Label("Address") </span>* @Html.TextBoxFor(m=>m.Address , null, new { @class = "contact" }) </p>
+                        <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="contact_submitted" value="Sign-Up" /></p>
+                        
+                    }
+		        </div>
+              </div>
+	  
+	</div><!--close site_content--> 
+ 
+  </div><!--close main-->
+  

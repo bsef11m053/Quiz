@@ -1,0 +1,85 @@
+﻿@model Quiz.Models.User
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+@{
+    ///Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+   <div id="main">
+
+	<div id="menubar_container">	    
+	  <div id="menubar">
+	   
+        <div id="menu_items">
+	      <ul id="menu">
+            <li><a href="index">Home</a></li>
+            <li><a href="contact">Contact Us</a></li>
+              <li class="current"><a href="login">Log-in</a></li>
+              <li><a href="signup">Sign-Up</a></li>
+          </ul>
+        </div>		
+      
+	  </div>		  
+	</div>
+
+	<div id="slogan_container">     		  
+	  <div id="slogan">	  
+	    <h2>Do you think you are intelligent??? Lets See !!!</h2>	  
+	  </div>	
+	</div>
+	
+	<div id="site_content">	
+
+	          <div class="sidebar_container">       
+		
+		        <div class="sidebar">
+                  <div class="sidebar_item">
+                    <h2>My Website</h2>
+                    <p>Welcome to my new website. Please have a look around, any feedback is much appreciated.</p>
+                  </div>
+                </div>	
+		
+		        <div class="sidebar">
+                  <div class="sidebar_item">
+                    <h2>Latest Update</h2>
+                    <h3>June 2014</h3>
+                    <p>Views and Controllers are Updated.</p>         
+		          </div>
+                </div>
+		
+                </div>
+
+
+                <div id="content">
+                <div class="content_item">
+		          @*<div class="form_settings">
+                    <h2>Log-in</h2>
+                    <p>Please Enter your Username and Password to Log in. Please also provide the category for which you going to Log in.</p>
+			        <p>&nbsp;</p>
+			        <p><span>Name</span><input class="contact" type="text" name="your_name" value="" /></p>
+			        <p><span>Password</span><input class="contact" type="text" name="your_password" value="" /></p>
+                    <p><span>Category</span>
+                        <input  type="radio" name="your_category" value="Admin"  checked="checked"/>Admin
+                        <input  type="radio" name="your_category" value="Student" />Student
+                    </p>
+                    <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="contact_submitted" value="Log-in" /></p>
+                  </div>*@
+                    @using (Html.BeginForm("login", "Student", FormMethod.Get, new { @class = "form_settings" }))
+                    {
+                        <h2>Log in</h2>
+                        <p>Please Enter your Username and Password to Log in. Please also provide the category for which you going to Log in.</p>
+                        <p>&nbsp;</p>
+                        <p><span> @Html.Label("Username")</span> @Html.TextBoxFor( m =>m.Username, null, new { @class = "contact" })</p>
+                        
+                        <p><span> @Html.Label("Password")</span> @Html.TextBoxFor(m => m.Password , null, new { @class = "contact" })</p>
+                        <p><span> @Html.Label("Category")</span> @Html.RadioButton("Category", "Admin", true) Admin @Html.RadioButton("Category", "Student", false) Student</p>
+                        <p style="padding-top: 15px"><span>&nbsp;</span> <input class="submit" type="submit" name="contact_submitted" value="Log-in" /></p>
+                    }
+                    </div>
+              </div>
+	</div>
+ 
+  </div>
+

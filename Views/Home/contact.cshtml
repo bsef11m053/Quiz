@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+  <div id="main">
+	
+	<div id="menubar_container">
+	  <div id="menubar">
+	    
+		
+		
+        <div id="menu_items">
+	      <ul id="menu">
+            <li><a href="index">Home</a></li>
+            <li class="current"><a href="contact">Contact Us</a></li>
+              <li><a href="login">Log-in</a></li>
+              <li><a href="signup">Sign-Up</a></li>
+          </ul>
+        </div><!--close menu-->		
+      
+	  </div><!--close menubar-->		  
+	</div><!--close menubar_container-->
+	
+	<div id="header_container">     		  
+	  <div id="header"></div><!--close header-->				
+	</div><!--close header_container-->	
+	
+	<div id="slogan_container">     		  
+	  <div id="slogan">	  
+	    <h2>Do you think you are intelligent??? Lets See !!!</h2>	  
+	  </div><!--close slogan-->				
+	</div><!--close slogan_container-->		
+	
+	<div id="site_content">	
+
+	  <div class="sidebar_container">       
+		
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h2>My Website</h2>
+            <p>Welcome to my new website. Please have a look around, any feedback is much appreciated.</p>
+          </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->     		
+		
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h2>Latest Update</h2>
+            <h3>June 2014</h3>
+            <p>Views and Controllers are Updated.</p>         
+		  </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->
+		
+      </div><!--close sidebar_container-->	   
+	   
+      <div id="content">
+        <div class="content_item">
+		  <div class="form_settings">
+            <h2>Contact Us</h2>
+            <p>Please Enter the fields to to contact Us.</p>
+			<p>&nbsp;</p>
+          <form action="/Home/contactUs" method="post">
+              <p><span>Name</span><input class="contact" type="text" name="your_name" value="" /></p>
+              <p><span>Email Address</span><input class="contact" type="text" name="your_email" value="" /></p>
+              <p><span>Message</span><textarea class="contact textarea" rows="8" cols="50" name="your_message"></textarea></p>
+              <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="contact_submitted" value="Send" /></p>
+          </form>
+          </div>
+		</div>
+      </div>
+	  
+	</div><!--close site_content--> 
+ 
+  </div><!--close main-->
+  
+
