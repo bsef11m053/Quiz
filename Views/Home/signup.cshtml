@@ -106,7 +106,7 @@
                               });
                           
                       </script>
-                        @Html.Raw(Session["Username"].ToString());
+                        
                         <p><span> @Html.Label("Password") </span>* @Html.TextBoxFor(m=>m.Password , null, new { @class = "contact" }) </p>
                         <p><span> @Html.Label("Name") </span>* @Html.TextBoxFor(m=>m.Name , null, new { @class = "contact" }) </p>
                         <p><span> @Html.Label("Address") </span>* @Html.TextBoxFor(m=>m.Address , null, new { @class = "contact" }) </p>
